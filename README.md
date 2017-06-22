@@ -30,7 +30,7 @@ http://localhost:28080/index.html
 all the page can be accessed via HTTP.PUT or HTTP.POST, and the parameters are the same.
 
 ## Latency simulation ##
-It has one parameter ** value **, the duration to delay(or sleep in server side), in milliseconds.
+It has one parameter **value**, the duration to delay(or sleep in server side), in milliseconds.
 
 For example, delay 30 ms. Access it via web browser
 ```console
@@ -42,7 +42,7 @@ curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=30' h
 ```
 
 ## Memory intensive simulation ##
-It has two parameters, ** memory ** is amount of memory (in MB) to consume; the other is ** value **, the duration to hold the 
+It has two parameters, **memory** is amount of memory (in MB) to consume; the other is **value**, the duration to hold the 
 memory, in milliseconds.
 
 For example, consume 10 MB memory, and hold the memory for 110 ms.
@@ -56,7 +56,8 @@ curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=110&m
 ```
 
 ## CPU intensive simulation ##
-It will use as much CPU as possible to compute the MD5 for huge amout of interges. It has one parameter, ** cpu **, indicating the amount of computation.
+It will use as much CPU as possible to compute the MD5 for huge amout of interges. 
+It has one parameter, **cpu**, indicating the amount of computation.
 
 Access it via web browser
 ```console
