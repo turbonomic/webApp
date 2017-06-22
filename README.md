@@ -24,3 +24,18 @@ http://hostIP:28080/index.html
 or
 http://localhost:28080/index.html
 ```
+
+# Test workload #
+
+all the page can be accessed via HTTP.PUT or HTTP.POST, and the parameters are the same.
+
+## Latency simulation ##
+access it via web browser
+```console
+# value is time to delay(or sleep in server side), in millisecond.
+http://localhost:28080/workload.php/?value=30
+```
+access it via curl Post
+```console
+curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=30' http://localhost:28080/workload.php
+```
