@@ -30,12 +30,27 @@ http://localhost:28080/index.html
 all the page can be accessed via HTTP.PUT or HTTP.POST, and the parameters are the same.
 
 ## Latency simulation ##
-access it via web browser
-```
-# value is time to delay(or sleep in server side), in millisecond.
+It has one parameter ** value **, the duration to delay(or sleep in server side), in milliseconds.
+
+Access it via web browser
+```console
 http://localhost:28080/workload.php/?value=30
 ```
 access it via curl Post
 ```console
 curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=30' http://localhost:28080/workload.php
+```
+
+## Memory intensive simulation ##
+It has two parameters, ** memory ** is amount of memory (in MB) to consume; the other is ** value **, the duration to hold the 
+memory, in milliseconds.
+
+For example, consume 10 MB memory, and hold the memory for 110 ms.
+Access it via web browser
+```console
+http://localhost:28080/memwork.php/?value=110&memory=10
+```
+access it via curl Post
+```console
+curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=110&memory=10' http://localhost:28080/memwork.php
 ```
