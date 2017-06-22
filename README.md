@@ -32,7 +32,7 @@ all the page can be accessed via HTTP.PUT or HTTP.POST, and the parameters are t
 ## Latency simulation ##
 It has one parameter ** value **, the duration to delay(or sleep in server side), in milliseconds.
 
-Access it via web browser
+For example, delay 30 ms. Access it via web browser
 ```console
 http://localhost:28080/workload.php/?value=30
 ```
@@ -53,4 +53,16 @@ http://localhost:28080/memwork.php/?value=110&memory=10
 access it via curl Post
 ```console
 curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=110&memory=10' http://localhost:28080/memwork.php
+```
+
+## CPU intensive simulation ##
+It will use as much CPU as possible to compute the MD5 for huge amout of interges. It has one parameter, ** cpu **, indicating the amount of computation.
+
+Access it via web browser
+```console
+http://localhost:28080/cpuwork.php/?cpu=30
+```
+Access it via curl Post
+```console
+curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'cpu=30' http://localhost:28080/cpuwork.php
 ```
