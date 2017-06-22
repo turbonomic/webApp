@@ -31,7 +31,7 @@ all the page can be accessed via HTTP.PUT or HTTP.POST, and the parameters are t
 
 ## Latency simulation ##
 access it via web browser
-```console
+```
 # value is time to delay(or sleep in server side), in millisecond.
 http://localhost:28080/workload.php/?value=30
 ```
