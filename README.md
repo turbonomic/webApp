@@ -1,7 +1,7 @@
 # webApp #
 webApp is container image to simulating CPU/Memory intensive or high latency workload.
 
-# introduction #
+# Introduction #
 This web app is built with apache httpd and php. It can simulate  CPU intensive, Memory intensive, or High latency workload.
 It can accept Get or Post requests to simulate different level of workloads.
 
@@ -18,7 +18,7 @@ Second, run the image.
 $ docker run -d -p 28080:8080 $imageName
 ```
 
-Thrid, access the web Page
+Thrid, access the web Page via:
 ```console
 http://hostIP:28080/index.html
 or
