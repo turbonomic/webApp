@@ -39,7 +39,7 @@ For example, delay 30 ms. Access it via web browser
 ```console
 http://localhost:28080/workload.php/?value=30
 ```
-access it via curl Post
+Access it via curl Post
 ```console
 curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=30' http://localhost:28080/workload.php
 ```
@@ -53,7 +53,7 @@ Access it via web browser
 ```console
 http://localhost:28080/memwork.php/?value=110&memory=10
 ```
-access it via curl Post
+Access it via curl Post
 ```console
 curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=110&memory=10' http://localhost:28080/memwork.php
 ```
