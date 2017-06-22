@@ -30,7 +30,7 @@ http://localhost:28080/index.html
 
 # Test workload #
 
-all the page can be accessed via HTTP.PUT or HTTP.POST, and the parameters are the same.
+all the page can be accessed via HTTP **PUT** or **POST**, and the parameters are the same.
 
 ## Latency simulation ##
 It has one parameter **value**, the duration to delay(or sleep in server side), in milliseconds.
