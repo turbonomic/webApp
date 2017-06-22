@@ -1,9 +1,9 @@
 # webApp #
-webApp in container image for simulating CPU intensive or Memory intensive workload.
+webApp is container image to simulating CPU/Memory intensive or high latency workload.
 
 # introduction #
 This web app is built with apache httpd and php. It can simulate  CPU intensive, Memory intensive, or High latency workload.
-
+It can accept Get or Post requests to simulate different level of workloads.
 
 # Run it #
 First, build an docker image.
