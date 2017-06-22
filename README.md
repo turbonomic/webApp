@@ -41,7 +41,7 @@ http://localhost:28080/workload.php/?value=30
 ```
 Access it via curl Post
 ```console
-curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=30' http://localhost:28080/workload.php
+curl -H 'Content-Type: application/x-www-form-urlencoded' -X POST -d 'value=30' http://localhost:28080/workload.php
 ```
 
 ## Memory intensive simulation ##
@@ -55,7 +55,7 @@ http://localhost:28080/memwork.php/?value=110&memory=10
 ```
 Access it via curl Post
 ```console
-curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=110&memory=10' http://localhost:28080/memwork.php
+curl -H 'Content-Type: application/x-www-form-urlencoded' -X POST -d 'value=110&memory=10' http://localhost:28080/memwork.php
 ```
 
 ## CPU intensive simulation ##
@@ -68,5 +68,5 @@ http://localhost:28080/cpuwork.php/?cpu=30
 ```
 Access it via curl Post
 ```console
-curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'cpu=30' http://localhost:28080/cpuwork.php
+curl -H 'Content-Type: application/x-www-form-urlencoded' -X POST -d 'cpu=30' http://localhost:28080/cpuwork.php
 ```
