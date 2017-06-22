@@ -41,14 +41,14 @@
     $basexx = str_repeat("hello", 100);
     $tmp = str_repeat($basexx, $rmemnum/500);
     $usedMem = round(memory_get_usage()/(1024*1024.0), 2);
-    echo "memory used 1: $usedMem MB.";
+    echo "memory used 1: <b> $usedMem MB </b>.";
 
     usleep(1000*$rnum);
 
     unset($tmp);
     echo "<br><br>free memory...<br><br>";
     $usedMem = round(memory_get_usage()/(1024*1024.0), 2);
-    echo "memory used 2: $usedMem MB.";
+    echo "memory used 2: <b> $usedMem MB </b>.";
 
     echo "</center> </p>";
     include 'footer.php';
