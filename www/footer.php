@@ -7,6 +7,6 @@
     echo "<br>";
     echo "Container: ". gethostname() ;
     echo "<br>";
-    echo "<a href='../index.html'>Home</a>";
+    echo "<a href='/index.html'>Home</a>";
     echo "</center></p>";
 ?>
