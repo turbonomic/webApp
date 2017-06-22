@@ -5,6 +5,9 @@ webApp is container image to simulating CPU/Memory intensive or high latency wor
 This web app is built with apache httpd and php. It can simulate  CPU intensive, Memory intensive, or High latency workload.
 It can accept Get or Post requests to simulate different level of workloads.
 
+It also enables the **mod_status** of the httpd server, so that user can have a easier way to understand the workloads.
+
+
 # Run it #
 First, build an docker image.
 ```console
@@ -56,7 +59,7 @@ curl -H 'Content-Type: application/x-www-form-urlencoded' -X PUT -d 'value=110&m
 ```
 
 ## CPU intensive simulation ##
-It will use as much CPU as possible to compute the MD5 for huge amout of interges. 
+It will use as much CPU as possible to compute the MD5 for huge amout of integers. 
 It has one parameter, **cpu**, indicating the amount of computation.
 
 Access it via web browser
