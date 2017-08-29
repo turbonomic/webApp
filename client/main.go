@@ -140,9 +140,9 @@ func parseFlag(req *requestConfig) {
 
 	paths := []string{cpuPath, memPath}
 	if req.kind == "cpu" {
-		paths = paths[0:1]
+		paths = []string{cpuPath}
 	} else if req.kind == "memory" {
-		paths = paths[1:]
+		paths = []string{memPath}
 	}
 
 	req.paths = paths
