@@ -104,11 +104,11 @@ func parallel_send(req *requestConfig) {
 	//1. start the threads
 	for i := 0; i < req.threadNum; i++ {
 		wg.Add(1)
-		go func() {
+		go func(index int) {
 			defer wg.Done()
-			result := send_request(i, req, stop)
+			result := send_request(index, req, stop)
 			results <- result
-		}()
+		}(i)
 	}
 
 	//2. wait for timer
@@ -122,7 +122,7 @@ func parallel_send(req *requestConfig) {
 		total += <-results
 	}
 
-	glog.Infof("test is stopped with %d reqeusts in total.", total)
+	glog.Infof("test sends %d reqeusts in total.", total)
 }
 
 func parseFlag(req *requestConfig) {
