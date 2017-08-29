@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/golang/glog"
-	"io/ioutil"
+	_ "io/ioutil"
 	"net/http"
 	"net/url"
 	"sync"
@@ -37,7 +37,8 @@ type requestConfig struct {
 func do_send_request(url string, qdata url.Values) {
 	res, err := http.PostForm(url, qdata)
 	if err != nil {
-		glog.Fatal(err)
+		glog.Warning(err)
+		return
 	}
 	defer res.Body.Close()
 
@@ -46,14 +47,14 @@ func do_send_request(url string, qdata url.Values) {
 		return
 	}
 
-	content, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		glog.Fatal(err)
-	}
+	//content, err := ioutil.ReadAll(res.Body)
+	//if err != nil {
+	//	glog.Fatal(err)
+	//}
 
-	if len(content) < 0 {
-		glog.Fatalf("content is empty:%s", content)
-	}
+	//if len(content) < 0 {
+	//	glog.Fatalf("content is empty:%s", content)
+	//}
 	//fmt.Printf("%s", content)
 }
 
