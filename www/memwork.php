@@ -38,14 +38,18 @@
 
     echo "sleep $rnum ms, with $memnum MB memory. <br>";
 
-    $basexx = str_repeat("hello", 100);
-    $tmp = str_repeat($basexx, $rmemnum/500);
+    $base = str_repeat("helloworldhelloworld", 100);
+    $base10w = str_repeat($base, 50);
+    $base1m = str_repeat($base10w, 10);
+    $bigmem = str_repeat($base1m, $rmemnum/(1000*1000.0));
+    #$bigmem = array_fill(0, $rmemnum, '');
+    
     $usedMem = round(memory_get_usage()/(1024*1024.0), 2);
     echo "memory used 1: <b> $usedMem MB </b>.";
 
     usleep(1000*$rnum);
 
-    unset($tmp);
+    unset($bigmem);
     echo "<br><br>free memory...<br><br>";
     $usedMem = round(memory_get_usage()/(1024*1024.0), 2);
     echo "memory used 2: <b> $usedMem MB </b>.";
