@@ -5,6 +5,7 @@ metadata:
 spec:
   selector:
     app: fake-app-pods
+  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 80
