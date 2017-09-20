@@ -8,20 +8,21 @@ It can accept Get or Post requests to simulate different level of workloads.
 It also enables the **mod_status** of the httpd server, so that user can have a easier way to understand the workloads.
 
 
-# Run it #
-First, build an docker image.
+# Build docker image #
+Build a docker image.
 ```console
-$ export imageName="webAppImage"
+$ export imageName="webapp"
 $ docker build -t $imageName .
 ```
 
-Second, run the image.
+# Run container #
+First, run the container from the image.
 ```console
 # 28080 is host port.
 $ docker run -d -p 28080:8080 $imageName
 ```
 
-Thrid, access the web Page via:
+Second, access the web Page via:
 ```console
 http://hostIP:28080/index.html
 or
