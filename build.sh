@@ -1,5 +1,5 @@
 #!/bin/bash
-name="beekman9527/workload"
+name="beekman9527/webapp"
 docker build -t $name .
 
 hostPort=28080
