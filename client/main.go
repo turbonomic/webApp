@@ -78,9 +78,13 @@ func send_request(index int, req *requestConfig, stop chan struct{}) int {
 				return count
 			default:
 				url := fmt.Sprintf("%s%s", req.host, path)
+				if count == 0 {
+					glog.Infof("url: %v", url)
+				}
+
 				result := do_send_request(url, qdata)
 				if count%1000 == 0 {
-					fmt.Println(result)
+					glog.Infof("count=%d: %v", count, result)
 				}
 				count += 1
 			}
