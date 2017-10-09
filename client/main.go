@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"github.com/golang/glog"
-	_ "io/ioutil"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"sync"
@@ -34,28 +34,31 @@ type requestConfig struct {
 	latency int
 }
 
-func do_send_request(url string, qdata url.Values) {
+func do_send_request(url string, qdata url.Values) string {
 	res, err := http.PostForm(url, qdata)
 	if err != nil {
 		glog.Warning(err)
-		return
+		return "err"
 	}
 	defer res.Body.Close()
 
 	if res.StatusCode != 200 {
 		glog.Warningf("bad http[%s] result: %+v", url, res)
-		return
+		return "err2"
 	}
 
-	//content, err := ioutil.ReadAll(res.Body)
-	//if err != nil {
-	//	glog.Fatal(err)
-	//}
+	content, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		glog.Fatal(err)
+		return "err3"
+	}
 
-	//if len(content) < 0 {
-	//	glog.Fatalf("content is empty:%s", content)
-	//}
-	//fmt.Printf("%s", content)
+	if len(content) < 0 {
+		glog.Fatalf("content is empty:%s", content)
+		return "err4"
+	}
+
+	return string(content[:])
 }
 
 func send_request(index int, req *requestConfig, stop chan struct{}) int {
@@ -75,7 +78,10 @@ func send_request(index int, req *requestConfig, stop chan struct{}) int {
 				return count
 			default:
 				url := fmt.Sprintf("%s%s", req.host, path)
-				do_send_request(url, qdata)
+				result := do_send_request(url, qdata)
+				if count%1000 == 0 {
+					fmt.Println(result)
+				}
 				count += 1
 			}
 
