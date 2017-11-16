@@ -9,7 +9,7 @@
         $num = 1;
     }
 
-    $low = $num - 30;
+    $low = $num - 2;
     if($low < 1) {
         $low = 1;
     }
@@ -19,7 +19,7 @@
     echo "<body> <p> <center>";
     echo "<h2>Latency Test by Sleeping</h2>";
 
-    $rnum = rand($low, $num+50);
+    $rnum = rand($low, $num+2);
     echo "sleep $rnum ms <br>";
     usleep(1000*$rnum);
 

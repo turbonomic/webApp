@@ -33,7 +33,7 @@
     if($num > 1) {
         $rnum = rand($num, $num+3);
     }
-    $rmemnum = $memnum *1024*1024 + rand(100, 1024);
+    $rmemnum = $memnum *1024*1024;
 
 
     echo "sleep $rnum ms, with $memnum MB memory. <br>";
